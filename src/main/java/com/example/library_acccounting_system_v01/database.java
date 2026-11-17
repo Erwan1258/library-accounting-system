@@ -1,6 +1,6 @@
 package com.example.library_acccounting_system_v01;
 
-import com.mysql.jdbc.Connection;
+import java.sql.Connection;
 
 import java.sql.DriverManager;
 
@@ -10,9 +10,9 @@ public class database {
     public static Connection connectDB() {
 
         try{
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
-            Connection connect = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/library","root","");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost/library","root","");
 
             return connect;
         }catch (Exception e){
